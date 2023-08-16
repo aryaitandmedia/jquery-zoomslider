@@ -19,7 +19,7 @@ Dependencies:
 
 To initialize the zoom slider, add the attribute **data-zs-src** to a DOM element and the slider will auto-initialize.
 
-	<div data-zs-src='["img1.jpg", "img2.jpg", "img3.jpg"]'>
+	<div data-zs-src='["img1.jpg", "img2.jpg", "img3.jpg"]' data-zs-src='["Coding", "is", "poetry"]'>
     	<p>Sample inner content</p>
 	</div>
 	
