@@ -2,7 +2,7 @@
 
 ZoomSlider creates slideshows with a zoom effect using background-image and CSS3.
 - - -
-/*
+
  *  zoomSlider - v0.1
  *  Title: ZoomSlider creates slideshows with a zoom effect using background-image and CSS3.
  *  Author: Amit Arya <https://github.com/aryaitandmedia/jquery-zoomslider>
@@ -11,8 +11,7 @@ ZoomSlider creates slideshows with a zoom effect using background-image and CSS3
  *  Description: This program has been customized and reproduced with a feature to load slider captions as well
  *  Credit: Ming Yeung <https://github.com/mingyeungs/jquery-zoomslider>
  *  Under MIT License
- */
-
+ 
 Dependencies: 
 	
 - jQuery: 1.10.2+
