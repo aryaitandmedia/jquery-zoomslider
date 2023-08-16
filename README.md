@@ -17,7 +17,7 @@ Dependencies:
 - jQuery: 1.10.2+
 - Modernizr: 2.6.2+ <small>(for css3 transform support detection. May implement custom script to remove this dependency in future)</small>
 
-To initialize the zoom slider, add the attribute **data-zs-src** to a DOM element and the slider will auto-initialize.
+To initialize the zoom slider, add the attribute **data-zs-src** for images & **data-zs-title** for captions to a DOM element and the slider will auto-initialize.
 
 	<div data-zs-src='["img1.jpg", "img2.jpg", "img3.jpg"]' data-zs-src='["Coding", "is", "poetry"]'>
     	<p>Sample inner content</p>
