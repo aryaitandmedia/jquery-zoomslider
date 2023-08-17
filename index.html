@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Amit Arya" />
+	<title>Zoom Slider - AIT&M</title>
+	<link rel="stylesheet" type="text/css" href="dist/zoomslider.min.css" />
+	<script type="text/javascript" src="js/modernizr-2.6.2.min.js"></script>
+	<style>
+		/* Basic styling */
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #fff;
+			font-family: Georgia, serif;
+			line-height: 1.4;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			font-weight: normal;
+			font-style: italic;
+		}
+
+		code {
+			display: block;
+			background-color: #eee;
+			padding: 2em;
+			overflow: scroll;
+			white-space: nowrap;
+		}
+
+		.body {
+			max-width: 800px;
+			padding: 40px;
+			margin: 0 auto;
+		}
+
+		.meta {
+			margin: 0 0 40px 0;
+			font-size: 0.8em;
+		}
+
+		.properties-table {
+			width: 100%;
+			padding: 0;
+			border-spacing: 0;
+			margin-top: 2em;
+			font-size: .85em;
+			background-color: #eee;
+		}
+
+		.properties-table th,
+		.properties-table td {
+			text-align: left;
+			padding: 10px;
+		}
+
+		.properties-table th {
+			border-bottom: 1px solid #333;
+			line-height: 2;
+		}
+
+		/* End Basic styling */
+
+
+		#demo-1 {
+			position: relative;
+			/* can either be relative, absolute or fixed. If position is not set (i.e. static), it would be set to "relative" by script */
+			overflow: hidden;
+			/* to bound the empty top space created by inner element's top margin */
+			width: 100%;
+			min-height: 760px;
+			background-color: #999;
+		}
+
+		.zs-enabled .zs-slideshow .zs-titles {
+			z-index: 4;
+			/* if z-index is not set, the script will set it to '2'. */
+		}
+
+		.zs-enabled .zs-slideshow .zs-titles .zs-title {
+			/* your desired css styling goes here */
+		}
+	</style>
+</head>
+
+<body>
+	<div id="demo-1" data-zs-src='["photos/1.jpg", "photos/2.jpg", "photos/3.jpg"]'
+		data-zs-title='["Ignorance is bliss", "Better safe than sorry", "Fortune favours the bold"]'
+		data-zs-overlay="false" data-zs-bullets="true">
+	</div>
+
+	<div class="body">
+		<p class="meta">jQuery.zoomSlider v0.12.3 / by Amit Arya / <a href="http://aryaitandmedia.com/"
+				target="_blank">http://www.aryaitandmedia.com</a></p>
+		<h3>Dependencies:</h3>
+		<ul>
+			<li>jQuery: 1.10.2+</li>
+			<li>Modernizr: 2.6.2+ <small>(for css3 transform support detection. May impliment custom script to remove
+					this depencency in future)</small></li>
+		</ul>
+		
+		<p>To initialize the zoom slider, add the attribute <em>data-zs-src</em> for images & <em>data-zs-title</em> for captions to a DOM element and the slider will auto-initialize.</p>
+		<code>
+			&lt;head&gt;<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel="stylesheet" type="text/css" href="css/zoomslider.css" /&gt;<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&lt;script type="text/javascript" src="js/modernizr-2.6.2.min.js"&gt;&lt;/script&gt;<br />
+			&lt;/head&gt;<br />
+			&lt;body&gt;
+			<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;...<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&lt;div <strong>data-zs-src='["img1.jpg", "img2.jpg", "img3.jpg"]'</strong>&nbsp;<strong>data-zs-title='["Coding", "is", "poetry"]'</strong>&gt;<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Sample inner content&lt;/p&gt;<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;...<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&lt;script type="text/javascript" src="js/jquery.min.js">&lt;/script&gt;<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&lt;script type="text/javascript" src="js/jquery.zoomslider.min.js"&gt;&lt;/script&gt;<br />
+			&lt;/body&gt;
+		</code>
+		<br>
+		<p>To add custom styles:</p>
+		<code>
+			&lt;style&gt;
+			<br />&nbsp;&nbsp;.zs-enabled .zs-slideshow .zs-titles .zs-title {<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;font-family: "southernaire";<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;font-size: 2.5em;<br />
+				&nbsp;&nbsp;}<br />
+			
+			&lt;/style&gt;<br />
+			
+		</code>
+		<br>
+		<p>All configurable properties:</p>
+		<table class="properties-table">
+			<thead>
+				<tr>
+					<th>Data attribute</th>
+					<th>Default value</th>
+					<th>Possible values</th>
+				</tr>
+			</thead>
+			<tr>
+				<td>data-zs-src</td>
+				<td>null</td>
+				<td>[]</td>
+			</tr>
+			<tr>
+				<td>data-zs-speed</td>
+				<td>8000</td>
+				<td>Number (milliseconds)</td>
+			</tr>
+			<tr>
+				<td>data-zs-switchSpeed</td>
+				<td>800</td>
+				<td>Number (milliseconds)</td>
+			</tr>
+			<tr>
+				<td>data-zs-interval</td>
+				<td>4500</td>
+				<td>Number (milliseconds)</td>
+			</tr>
+			<tr>
+				<td>data-zs-autoplay</td>
+				<td>true</td>
+				<td>true / false</td>
+			</tr>
+			<tr>
+				<td>data-zs-titles</td>
+				<td>null</td>
+				<td>[]</td>
+			</tr>
+			<tr>
+				<td>data-zs-bullets</td>
+				<td>true</td>
+				<td>true / false</td>
+			</tr>
+			<tr>
+				<td>data-zs-overlay</td>
+				<td>'plain'</td>
+				<td>false, 'plain', 'dots'</td>
+			</tr>
+		</table>
+	</div>
+
+
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<!-- <script type="text/javascript" src="../dist/jquery.zoomslider.min.js"></script> -->
+	<script type="text/javascript" src="dist/jquery.zoomslider.min.js"></script>
+</body>
+
+</html>
