@@ -130,3 +130,16 @@
 .zs-enabled.overlay-dots .zs-slideshow:after {
   background-image: url(dots.png);
 }
+
+/**
+* demo wise styles to be integrated
+*/
+#demo-1 {
+  position: relative;
+  /* can either be relative, absolute or fixed. If position is not set (i.e. static), it would be set to "relative" by script */
+  overflow: hidden;
+  /* to bound the empty top space created by inner element's top margin */
+  width: 100%;
+  min-height: 760px;
+  background-color: #999;
+}
